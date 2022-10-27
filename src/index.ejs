@@ -1,0 +1,264 @@
+<!doctype html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style id="distill-article-specific-styles">
+    <%=require("../public/styles.css") %>
+  </style>
+  <script src="https://distill.pub/template.v2.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+  <d-front-matter>
+    <!--This represents the front matter and loading of the authors.-->
+    <script type="text/json">
+      <%= JSON.stringify(require("./frontmatter.json"), null, 4) %>
+    </script>
+  </d-front-matter>
+
+  <d-title>
+    <h1>Cultural Biases in BERT: A primer on mitigating biases</h1>
+    <p>Examining the hidden bias in a popular widely used Natural language processing model.</p>
+    <!--This represents the mosaic of the article.-->
+    <!-- <div id="mosaic" class="subgrid"></div> -->
+  </d-title>
+
+  <d-byline></d-byline>
+
+  <d-article>
+    <d-contents id="toc"></d-contents>
+
+    <!-- INTRO -->
+    <!---Changing this would change change the written contents of the page-->
+    <div>
+      <h2 id="interactive-articles">Abstract</h2>
+      <p id="abstract">
+        This paper
+      </p>
+
+      <h2 id="interactive-articles">Introduction</h2>
+      <p id="introduction">
+         
+      </p>
+      <script type="module" src="https://js.withorbit.com/orbit-web-component.js"></script>
+      <orbit-reviewarea color="lime">
+        <orbit-prompt
+          question="What is the name of the model we are going to discuss?"
+          answer="BERT"
+        ></orbit-prompt>
+        <orbit-prompt
+          question="Which year was BERT realesed?"
+          answer="2018."
+        ></orbit-prompt>
+        <orbit-prompt
+          question="What structure does BERT use?"
+          answer="Transformers"
+        ></orbit-prompt>
+
+      </orbit-reviewarea>
+
+      <p>
+      In 2018, a group of researchers at Google AI Language group realesed BERT, an acronym for Bidirectional Encoder Representations from Transformers.
+      BERT is an NLP model that uses a Transformer architecture to learn the representation of words in a text. <cite data-cite="devlin2018bert"></cite>. The paper received 49885 citations as of October 16, 2022, representing the popularity and importance of this model. 
+      The model is freely available for download and use, and has been used in a wide variety of applications, including question answering, text classification, and text generation. This model represents a broader trend in the NLP community to use large pretrained models for a variety of tasks and use of transfer learning to fine-tune these models for specific tasks.
+      </p>
+
+      <p>
+      The model is largely biased and have a strong gender preference. As the model is widely used and AI adoption becomes more prevalent, it is important to understand the biases in the model and how to mitigate them.
+      BERT has a submodel named 'BERT-uncased-english' which is a model that has been trained on English Wikipedia and BooksCorpus. English Wikipedia is a larg3e dataset of all english articles on the Wikipedia, a free online encyclopedia used by over 44 million people and containing over 6.7 million articles. BooksCourpus is a dataset of 11,038 novel books written by unpublished and self-published authors.
+      Both the training datasets contain biases in the first part of the paper we will explore Bias identification stragies and in the second part we will explore Bias mitigation stragies. 
+      </p>
+    </div>
+
+    <p class="l-body-side">
+      l-body-side
+    </p>
+
+    <!-- <div id="applications-tab" class="subgrid"></div>
+    <div class="hidden-citations"><d-cite key="wattenberg2016attacking, petricek2017coeffects, dedomenico2019complexity, roston2015whats, aisch2015you, blood2017uber, comeau2018lets, vivo2015book, makler2017econgraphs, case2016build, atlas2018bycoffe, bostock2014better"></d-cite></div> -->
+
+    <p>
+      normal p
+    </p>
+    <!-- Interactive Articles -->
+
+    <h2 id="interactive-articles">Identification of bias</h2>
+    
+    This section will review the different methods used to identify bias in the model.
+
+    <h3 id="focused">Classification protection</h3>
+
+    For similar people or actions or any idea that could be represented by natural language, the treatment given to the set of words should be not larger than the distance between them.
+    <cite data-cite="dwertetal"></cite>
+    The idea of fairness is that we need to take into account various factors. 
+
+
+    <h3 id="focused">Learning Classification without Disparate Mistreatment</h3>
+
+    <p>
+      Disparate Treatment
+      When two people are same except a sensitive attribute, the results should be similar. 
+    </p>
+
+    <p>
+      Group treatment on average should be similar to the individual treatment.
+    </p>
+
+    <h3 id="focused">The Blinder Oaxaca decomposition for linear regression models</h3>
+
+    <p>
+      Make a linear model that bias exists and find it? 
+      First find all the factors that can affect the outcome and are justified. For instace, skills and experience are valid predictors of salary.
+      Second, create a model that predicts the outcome using all the factors.
+      Create hypothetical scenerios where we can make synthetic people. 
+    </p>
+
+  
+
+  
+    <d-figure id="affordances" class="subgrid"></d-figure>
+
+
+    <h3 id="connecting-people-and-data" class="blue-green affordance">Connecting People and Data</h3>
+
+   
+
+
+    <h3 id="making-systems-playful" class="affordance red-orange">Making Systems Playful</h3>
+
+   
+
+    <d-figure id="simulation-vis" class="subgrid"></d-figure>
+
+
+
+    
+
+    <div>
+      <p>
+        <d-figure class="video-d-figure" id="sanderson2018visualizing"></d-figure>
+        While these videos are praised for their approachability and rich exposition, they are not interactive. One radical extension from traditional video content is also incorporating user input into the video while narration plays. A series of these interactive videos on "Visualizing Quaternions" lets a reader listen to narration of a live animation on screen, but at any time the viewer can take control of the video and manipulate the animation and graphics while simultaneously listening to the narration <d-cite key="sanderson2018visualizing"></d-cite>.
+      </p>
+
+      <p>
+        Utilizing multiple representations allows a reader to see different abstractions of a single idea. Once these are familiar and known, an author can build interfaces from multiple representations and let readers interact with them simultaneously, ultimately leading to interactive experiences that demonstrate the power of computational communication mediums. Next, we discuss such experiences where interactive articles have transformed communication and learning by making live models and simulations of complex systems and phenomena accessible.
+      </p>
+    </div>
+
+    <h3 id="prompting-self-reflection" class="affordance soft-blue">Prompting Self-Reflection</h3>
+
+    <d-figure id="you-draw-it" class="subgrid"></d-figure>
+
+    <div>
+      <p>
+        <d-figure class="video-d-figure" id="goldenberg2019you"></d-figure>
+        In the case of "You Draw It," readers were also shown the predictions that others made, adding a social comparison element to the experience. This additional social information was not shown to necessarily be effective for improving recall <d-cite key="kim2017data"></d-cite>. However, one might hypothesize that this social aspect may have other benefits such as improving reader engagement, due to the popularity of recent visual stories using this technique, for example in <i>The Pudding's</i> "Gyllenhaal Experiment" <d-cite key="goldenberg2019you"></d-cite> and <i>Quartz's</i> "How do you draw a circle?" <d-cite key="ha2017you"></d-cite>.
+      </p>
+
+      <p>
+        Prompting readers to remember previously presented material, for example through the use of quizzes, can be an effective way to improve their ability to recall it in the future <d-cite key="gates1922recitation"></d-cite>. This result from cognitive psychology, known as the testing effect <d-cite key="roediger2006power"></d-cite>, can be utilized by authors writing for an interactive medium <d-cite key="khanacademy"></d-cite>. While testing may call to mind stressful educational experiences for many, quizzes included in web articles can be low stakes: there is no need to record the results or grade readers. The effect is enhanced if feedback is given to the quiz-takers, for example by providing the correct answer after the user has recorded their response <d-cite key="bangert1991instructional"></d-cite>.
+      </p>
+
+      <p>
+        <d-figure class="video-d-figure" id="case2014how"></d-figure>
+        The benefits of the testing effect can be further enhanced if the testing is repeated over a period of time <d-cite key="karpicke2008critical"></d-cite>, assuming readers are willing to participate in the process. The idea of spaced repetition has been a popular foundation for memory building applications, for example in the Anki flash card system. More recently, authors have experimented with building spaced repetition directly into their web-based writing <d-cite key="case2014how, matuschak2019quantum"></d-cite>, giving motivated readers the opportunity to easily opt-in to a repeated testing program over the relevant material.
+      </p>
+    </div>
+
+    <h3 id="personalizing-reading" class="affordance argon">Personalizing Reading</h3>
+
+    <p>
+      Content personalization—automatically modifying text and multimedia based on a reader's individual features or input (e.g., demographics or location)—is a technique that has been shown to increase engagement and learning within readers <d-cite key="cordova1996intrinsic"></d-cite> and support behavioral change <d-cite key="di2006authoring"></d-cite>. The PersaLog system gives developers tools to build personalized content and presents guidelines for personalization based on user research from practicing journalists <d-cite key="adar2017persalog"></d-cite>. Other work has shown that "personalized spatial analogies," presenting distance measurements in regions where readers are geographically familiar with, help people more concretely understand new distance measurements within news stories <d-cite key="kim2016generating"></d-cite>.
+    </p>
+
+    <p>
+      <d-figure class="video-d-figure" id="popovich2018how"></d-figure>
+      Personalization alone has also been used as the standout feature of multiple interactive articles. Both "How Much Hotter Is Your Hometown Than When You Were Born?" <d-cite key="popovich2018how"></d-cite> and "Human Terrain" <d-cite key="daniels2018human"></d-cite> use a reader's location to drive stories relating to climate change and population densities respectively. Other examples ask for explicit reader input, such as a story that visualizes a reader's net worth to challenge a reader's assumptions if they are wealthy or not (relative to the greater population) <d-cite key="quealy2019are"></d-cite>, or predicting a reader's political party affiliation <d-cite key="chinoy2010quiz"></d-cite>. Another example is the interactive scatterplot featured in "Find Out If Your Job Will Be Automated" <d-cite key="whitehouse2017find"></d-cite>. In this visualization, professions are plotted to determine their likelihood of being automated against their average annual wage. The article encourages readers to use the search bar to type in their own profession to highlight it against the others.
+    </p>
+
+   
+    <p>
+      <d-figure class="video-d-figure" id="matuschak2019quantum"></d-figure>
+      Another technique interactive articles often use is segmenting content into small pieces to be read in-between or alongside other graphics. While we have already discussed cognitive load theory, the Segmenting Theory, the idea that complex lessons are broken into smaller, bit-sized parts <d-cite key="clark2016learning"></d-cite>, also supports personalization within interactive articles. Providing a reader the ability to play, pause, and scrub content allows the reader to move at their own speed, comprehending the information at a speed that works best for them. Segmenting also engages a reader's essential processing without overloading their cognitive system <d-cite key="clark2016learning"></d-cite>.
+    </p>
+
+  
+
+
+    <h3 id="reducing-cognitive-load" class="affordance sun">Reducing Cognitive Load</h3>
+
+    
+
+    <h4>Data Visualization</h4>
+
+    
+
+    <d-figure id="details-vis" class="subgrid"></d-figure>
+
+    <h4>Illustration</h4>
+
+    
+
+    <d-figure id="details-illustration" class="subgrid"></d-figure>
+
+    <h4>Mathematical Notation</h4>
+
+    
+
+    <d-figure id="details-math" class="subgrid"></d-figure>
+
+    <h4>Text</h4>
+
+
+    <d-figure id="details-text" class="subgrid"></d-figure>
+
+    <h4>Previewing Content</h4>
+
+   
+
+    <h2 id="challenges">Challenges for Authoring Interactives</h2>
+
+   
+   
+    <h2 id="critical-reflections">Critical Reflections</h2>
+
+   
+
+    <d-figure id="parametric" class="subgrid"></d-figure>
+    <div class="hidden-citations"><d-cite key="feng2019myth"></d-cite></div>
+
+    
+
+    <d-figure id="research-x-practice" class="subgrid"></d-figure>
+
+   
+
+    <h2 id="looking-forward">Looking Forward</h2>
+
+    <p>
+      A diverse community has emerged to meet these challenges, exploring and experimenting with what interactive articles could be. The <a href="https://explorabl.es/">Explorable Explanations community</a> is a "disorganized ‘movement’ of artists, coders & educators who want to reunite play and learning." Their online hub contains 170+ interactive articles on topics ranging from art, natural sciences, social sciences, journalism, and civics. The curious can also find tools, tutorials, and meta-discussion around learning, play, and representations. Explorables also hosted a mixed in-person and <a href="https://explorabl.es/jam/">online Jam</a>: a community-based sprint focused on creating new explorable explanations. <a class="figure-number-text" href="#jam">11</a> highlights a subset of the interactive articles created during the Jam.
+    </p>
+
+    <d-figure id="jam" class="subgrid"></d-figure>
+
+    
+
+  </d-article>
+
+  <d-appendix>
+    <h3>Acknowledgments</h3>
+    
+
+    <h3>Author Contributions</h3>
+    
+
+    <d-footnote-list></d-footnote-list>
+    <d-citation-list></d-citation-list>
+  </d-appendix>
+
+  <!-- bibliography will be inlined during Distill pipeline's pre-rendering -->
+  <d-bibliography src="bibliography.bib"></d-bibliography>
+
+</body>

@@ -1,0 +1,26 @@
+{
+	"title": "Cultural Biases in BERT: A primer on mitigating biases",
+	"description": "Examining the hidden bias in a popular widely used Natural language processing model.",
+	"authors": [
+		{
+			"author": "Gaurish Katlana",
+			"authorURL": "https://katlana.com",
+			"affiliation": "Minerva University",
+			"affiliationURL": "https://www.minerva.edu/"
+		}
+	],
+	"katex": {
+		"delimiters": [
+			{
+				"left": "$",
+				"right": "$",
+				"display": false
+			},
+			{
+				"left": "$$",
+				"right": "$$",
+				"display": true
+			}
+		]
+	}
+}
