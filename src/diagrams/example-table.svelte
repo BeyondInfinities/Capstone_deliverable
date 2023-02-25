@@ -41,12 +41,10 @@
 </script>
 
 <style>
-    #example-table-wrapper {
-        grid-column: page;
-    }
 
     table {
           /* border-collapse: collapse;  */
+          width:100%;
           height: 500px;
           display: block;
           overflow: scroll;
@@ -102,7 +100,6 @@
 
     .break { display: none; }
     .hide-column { display: auto; }
-
     figure {
 		margin-bottom: 1.5em;
     }
@@ -121,7 +118,7 @@
     }
 </style>
 
-<figure class="subgrid">
+<figure>
     <div id="example-table-wrapper">
         <table id="example-table">
             <thead>
@@ -150,6 +147,6 @@
     </div>
 
     <figcaption style="grid-column: text;">
-        <a class="table-number" href="#example-table">1</a>: A sortable list of the interactive articles we discuss in this work.
+        <a class="table-number" href="#example-table">1</a>: A list of articles you can explore.
     </figcaption>
 </figure>

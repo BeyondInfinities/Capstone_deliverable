@@ -102,15 +102,36 @@
     <h3>Contents</h3>
     <div><a href="#abstract">Abstract</a></div>
     <div><a href="#introduction">Introduction</a></div>
-    <div><a href="#interactive-articles">Interactive Articles: Theory & Practice</a></div>
+    <div><a href="#understanding-culture">Understanding Culture</a></div>
     <ul>
-      <li><a href="#connecting-people-and-data">Connecting People and Data</a></li>
-      <li><a href="#making-systems-playful">Making Systems Playful</a></li>
-      <li><a href="#prompting-self-reflection">Prompting Self-Reflection</a></li>
-      <li><a href="#personalizing-reading">Personalizing Reading</a></li>
-      <li><a href="#reducing-cognitive-load">Reducing Cognitive Load</a></li>
+      <li><a href="#considering-multilingual-speakers">Considering multilingual speakers</a></li>
+      <li><a href="#considering-food">Considering Food</a></li>
+      <li><a href="#considering-religion">Considering religion</a></li>
+      <li><a href="#considering-country">Considering country</a></li>
     </ul>
-    <div><a href="#challenges">Challenges for Authoring Interactives</a></div>
-    <div><a href="#critical-reflections">Critical Reflections</a></div>
-    <div><a href="#looking-forward">Looking Forward</a></div>
+    <div><a href="#understanding-bert">Understanding BERT</a></div>
+    <ul>
+        <li><a href="#21-introduction-to-bert">Introduction to BERT
+        </a></li>
+        <li><a href="#22-input">Input</a></li>
+        <li><a href="#23-the-model">The model</a></li>
+        <li><a href="#24-output">Output</a></li>
+      </ul>
+    <div><a href="#section-3-literature-review">Literature review</a></div>
+    <ul>
+        <li><a href="#31-using-word-embeddings-to-determine-bias">Using word embeddings to determine bias
+        </a></li>
+        <li><a href="#32-performing-bias-measurement-on-the-output">Performing bias measurement on the output</a></li>
+        <li><a href="#33-findings-summary">Findings Summary</a></li>
+      </ul>
+    <div><a href="#section-4--bias-test-for-multiple-cultural-elements-using-modified-categorical-bias-score">Bias test
+    </a></div>
+    <ul>
+        <li><a href="#section-41-introduction">Introduction</a></li>
+        <li><a href="#making-systems-playful">Bias measurement on the output</a></li>
+        <li><a href="#section-43-bias-for-individual-characteristics">Bias for interaction between characteristics
+        </a></li>
+        <li><a href="#section-43-bias-for-interaction-between-characteristics">The limitations of our approach</a></li>
+      </ul>
+      <div><a href="#appendix---a-gathering-data">Appendices</a></div>
 </nav>
