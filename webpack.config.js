@@ -1,20 +1,24 @@
 var path = require("path");
 var webpack = require("webpack");
+// import plugins for bundle-optimization, asset management & env variables
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 var CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
+	// Where to start building the webpack
 	entry: {
 		index: "./src/index.js",
 	},
 	resolve: {
 		extensions: [".mjs", ".js", ".html", ".npy"],
 	},
+	// Where and what name to output the files
 	output: {
 		path: __dirname + "/public",
 		filename: "[name].bundle.js",
 		chunkFilename: "[name].[id].js",
 	},
+	// specify loader in the format of {test: regex, use: [loader]}
 	module: {
 		rules: [
 			{
@@ -65,6 +69,7 @@ module.exports = {
 			},
 		],
 	},
+	// specify plugins by creating new objects for different uses
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: "./src/index.ejs",

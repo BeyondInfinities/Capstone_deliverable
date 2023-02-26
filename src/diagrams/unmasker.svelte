@@ -19,26 +19,8 @@
 
 </script>
 
-<style>
-    #unmask-form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    #unmask-form-input {
-        width: 100%;
-        max-width: 1000px;
-        padding: 10px;
-        margin: 10px;
-        border: 1px solid #ccc;
-        border-radius: 50px;
-    }
-
-
-</style>
-
-<figure>
-    <h1>Unmasker</h1>
+<div>
+    <b>Unmasker</b>
     <p>Enter a sentence with a masked word and click the button to unmask it.</p>
 <form class="unmask-form">
     <input type="text" class="unmask-form-input" bind:value={text} placeholder="The religion of a person who speaks Spanish is [MASK]."/>
@@ -51,4 +33,4 @@
     {/each}
 {/if}
 
-</figure>
+</div>

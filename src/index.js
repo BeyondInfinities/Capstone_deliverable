@@ -1,13 +1,14 @@
 import TOC from "./diagrams/toc.svelte"
 import Image from "./diagrams/image.svelte"
+import Image1 from "./diagrams/image1.svelte"
 import Unmasker from "./diagrams/unmasker.svelte"
 import Vectors from "./diagrams/vectors.svelte"
 // lazily initialize any diagram below the fold. E.G:
-// const exampleTag = document.getElementById("svelte-example-dfigure");
+// const exampleTag = document.getElementById("unmasker");
 // let example;
 // exampleTag.addEventListener("ready", () => {
-	// const target = exampleTag.querySelector("#svelte-example-target");
-	// example = new Example({ target });
+// 	const target = exampleTag.querySelector("#unmasker");
+// 	example = new Unmasker({ target });
 // });
 
 
@@ -19,21 +20,16 @@ const image = new Image({
 	target: document.getElementById('image')
 });
 
+const image1 = new Image1({
+	target: document.getElementById('image1')
+});
+
+const vectorPlay = new Vectors({
+	target: document.getElementById('vectors')
+});
 
 const unmasker = new Unmasker({
 	target: document.getElementById('unmasker')
 });
 
-const vectors = new Vectors({
-	target: document.getElementById('vectors')
-});
 
-
-
-
-const target = document.getElementById('details-illustration');
-target.addEventListener('ready', () => {
-	import('./diagrams/details-illustration.svelte').then(_Element => {
-		new _Element.default({ target });
-	});
-})

@@ -7,6 +7,9 @@
     {<%=require("../public/styles.css") %>}
   </style>
   <script src="https://distill.pub/template.v2.js"></script>
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <script type="text/javascript" src="./js/dataviz.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
@@ -28,8 +31,7 @@
   <d-article>
     <d-contents id="toc"></d-contents>
 
-    <div id="unmasker">
-    </div>
+    
 
     <!-- INTRO -->
     <!---Changing this would change change the written contents of the page-->
@@ -65,6 +67,7 @@
       <h3 id="1-different-varieties-of-english">1. Different Varieties of English</h3>
       <p>When we talk about English, it is almost not a single language. There are 1.5 billion people that speak English. <dt-cite key="cite21"></dt-cite> At least 100 dialects, accents, and English variations are spoken worldwide <dt-cite key="cite22"></dt-cite>. The most common dialects of English are American English, British English, Australian English, and Indian English. These dialects are not mutually intelligible and are different in many ways. For example, the word &quot;color&quot; is spelled as &quot;colour&quot; in British English and &quot;color&quot; in American English. The word &quot;theater&quot; is pronounced as &quot;theatre&quot; in Indian English and &quot;theater&quot; in American English. There are also variations like Black English Vernacular, Cockney English, and many others dialects spoken by minorities around the world that are considered vulgar by mainstream English speakers. Many slang words used in African-American Vernacular English are considered vulgar in standard English dialects <dt-cite key="cite23"></dt-cite>.</p>
       <p>This mainstream view of minorities’ dialects has enormous implications for minorities. The social stigma creates social pressure that the way they speak is vulgar and marginalizes them (<dt-cite key="cite24"></dt-cite><dt-cite key="cite25"></dt-cite>). Most NLP models are trained on English text that does not include substantial portion of African American Vernacular English <dt-cite key="cite26"></dt-cite>. A similar bias is observed in the models. It seems like the models are “white-washed” because of these biases. The deployed models might marginalize speakers of these dialects and create a vicious cycle that hurts these minorities.</p>
+      
       <h3 id="2-considering-other-lingual-speakers">2. Considering other lingual speakers</h3>
       <p>Languages can also define culture. Language is an integral part of the culture as it dictates the way people communicate with each other. It leads to the spread of ideas, beliefs, and values. Language can reflect various ideologies and values a culture holds. Texts written in specific languages might hold biases or negative connotations for certain groups of people. This existence of bias is a massive problem as it creates a bias in how models think about other cultures. For instance, when we ask BERT to identify a hypothetical Spanish speaker's religion, it predicts that the religion should be Christianity. Hence, the model implies causal relationships that might play into existing stereotypes.</p>
       <p>This result can have severe implications in real-life situations as NLP models are deployed to help people in their daily lives. For example, if a Spanish speaker is looking for necklaces, the model will implicitly assume that they are a Christian and suggest a crucifix.</p>
@@ -75,9 +78,11 @@
       <h3 id="4-considering-religion">4. Considering religion</h3>
       <p>Religion is another essential part of the culture. It is a set of beliefs and practices that a group follows. For example, in Hinduism, cows are believed to be sacred and should not be harmed <dt-cite key="cite27"></dt-cite>. In Islam, eating pork is forbidden. In Christianity, spreading the word of Jesus is considered a moral duty. These beliefs are passed down through generations and shape how people think and behave. There are also preconceived notions about people from different religions. There exist many tensions between various religious groups, and a biased model usage can exaggerate these tensions instead of addressing them appropriately. For instance, when we asked BERT about what a Christian carried out, it replied with suicide and murder in the case of a Muslim. With some prompts. From we also found that the model believed there was a preconceived notion about hatred towards other religions.</p>
       <p>Another example is a biased natural language model used in a social media platform to moderate content and flag inappropriate or offensive posts. Suppose the model has a bias against a specific religion. In that case, it could unfairly flag or remove posts that contain references to that religion, even if they are not inappropriate or offensive. This action could lead to censorship or discrimination against individuals or groups based on religious beliefs, potentially affecting the platform's reputation and user relationships.</p>
+      <div id="image"></div>
       <h3 id="5-considering-nationality">5. Considering nationality</h3>
       <p>Nationality also plays a vital role in culture. Countries are usually formed based on shared beliefs, religion, language, land, and other factors. Hence, most people associate strongly with their nationality or, in some cases, do not want to be associated with the nationality due to generational trauma, the political climate of their nation, etc. There are exceptions to having a strong sense of national identity, as there might be a difference between a person's nationality and the nationality one resonates with, creating nationality dysphoria.</p>
       <p>For example, consider a situation where a user from a country where English is not the primary language tries to use a machine translation application to translate a sentence from their native language into English. If the language model has a bias against the user's native language, it could provide a poor-quality translation that is full of errors or misunderstandings. This could lead to confusion or frustration for the user and potentially even affect their relationship with the person they are communicating with if the translation is inaccurate.</p>
+      <div id="image1"></div>
       <h2 id="section-2-understanding-bert">Section 2: Understanding BERT</h2>
       <h3 id="21-introduction-to-bert">2.1 Introduction to BERT</h3>
       <p>BERT is a transformer; hence, it is vital to learn about Transformers before understanding BERT. In this section, we will learn about Transformers and how BERT is built.</p>
@@ -96,6 +101,9 @@
       <li><strong>Segment embeddings:</strong> To differentiate between two sentences or between question and answer, the BERT needs to understand which class or part of the input a word belongs to. For instance, if we are trying to solve a question-answering task, we can use this to differentiate between the question and the answer—usually represented by [SEP] token.</li>
       <li><strong>Position embeddings:</strong> This is used to differentiate between the token's position in the sentence. For instance, if we are trying to solve a question-answering task, we can use this to differentiate between the position of the question and the answer. We need position embeddings because we input all the tokens at once, and the model cannot know the token's position in the sentence. Hence, we need to explicitly tell the model the token's position in the sentence. Position embeddings inform the exact token number of a token in a given input. Position embeddings also help BERT learn the context. For instance, consider two sentences, &quot;A person was sitting on the bank of the river&quot; and &quot;A person robbed a bank.&quot; In the first sentence, the word &quot;bank&quot; refers to the river bank, and in the second sentence, the word &quot;bank&quot; refers to the financial institution or a bank. Hence, the model needs to learn the context of the word &quot;bank&quot; to solve the task.</li>
       </ol>
+      <div id="vectors"></div>
+      <!-- Initialize a select button -->
+      <select id="selectButton"></select>
       <p>Currently, BERT can handle 512 tokens at once. For inputs larger than 512 tokens, the inputs can be broken down into smaller chunks, and the outputs of these chunks can be concatenated. However, in this case, the output would only contain part of the input context. The token limit is one of the most significant limitations of BERT. It also explains the word limit for google translate, which uses a similar transformer model.</p>
       <h3 id="23-the-model">2.3 The model</h3>
       <p>Attention allows BERT to focus on specific parts of the input text and weigh them accordingly when generating a response.</p>
@@ -150,7 +158,7 @@
       <h4 id="section-41-introduction">Section 4.1: Introduction</h4>
       <p>In this section, we would extend the idea of using multiple attributes and try to measure the synergetic energy between different classes. We will use the following template to measure the interaction bias,</p>
       <aside>
-      💡 “[Name] is from [Country]. [Name] speaks [Language]. [Name] is {a/an} [Religion]. [Name] likes to eat [Dish]. [Name] listens to [Music Genre]. [Name] is {Attribute}. ”
+       “[Name] is from [Country]. [Name] speaks [Language]. [Name] is {a/an} [Religion]. [Name] likes to eat [Dish]. [Name] listens to [Music Genre]. [Name] is {Attribute}. ”
       </aside>
       <p>In this template, we are using 5 major pieces of information (that are Location, Language, Religion, Cuisine, and Music) and a single attribute. We can also change the order of sentences in order to form new templates or change the way the information is represented in them.</p>
       <p>This would allow us to identify interference bias between different characteristics. We would use sentiment analysis of nltk that is based on a toxicity score to assign weights to the attributes. This would allow us to have a weight component for the attribute.</p>
@@ -353,10 +361,8 @@
     <d-citation-list></d-citation-list>
   </d-appendix>
 
-  <script>
-    const Cite = require('citation-js')
-    const example = new Cite(data, options)
-  </script>
+  <a href="https://www.mybib.com/b/1q2yzl">View Bibliography</a>
+  <script src="https://www.mybib.com/e/script" bibliography="1q2yzl"></script>
 
   <!-- bibliography will be inlined during Distill pipeline's pre-rendering -->
   <d-bibliography src="citations.bib"></d-bibliography>
