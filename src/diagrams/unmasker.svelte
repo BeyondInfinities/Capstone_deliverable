@@ -6,31 +6,43 @@
     const hf = new HuggingFace('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')
 
     // Natural Language
-    var sol = null;
+    let sol = null;
     async function unmask(event) {
-        // set the solution to the 
         if (event) event.preventDefault();
         sol = await hf.fillMask({
-        model: 'bert-base-uncased',
-        inputs: text
+            model: 'bert-base-uncased',
+            inputs: text
         })
         console.log(sol)
     }
 
 </script>
 
+<style>
+    .unmask-form {
+        display: flex;
+        gap: 10px;
+    }
+
+    .unmask-form-input {
+        flex-grow: 1;
+    }
+</style>
+
 <div>
-    <b>Unmasker</b>
+    <h2>Unmasker</h2>
     <p>Enter a sentence with a masked word and click the button to unmask it.</p>
-<form class="unmask-form">
-    <input type="text" class="unmask-form-input" bind:value={text} placeholder="The religion of a person who speaks Spanish is [MASK]."/>
-    <button type="submit" on:click={unmask}>Unmask</button>
-</form>
+    <form class="unmask-form">
+        <input type="text" class="unmask-form-input" bind:value={text} placeholder="The religion of a person who speaks Spanish is [MASK]."/>
+        <button type="submit" on:click={unmask}>Unmask</button>
+    </form>
 
-{#if sol}
-    {#each sol as s}
-        <p>BERT predicted {s.token_str} with a probability {s.score}</p>
-    {/each}
-{/if}
-
+    {#if sol}
+        <h3>BERT Predictions:</h3>
+        <ul>
+            {#each sol as s}
+                <li>BERT predicted <strong>{s.token_str}</strong> with a probability of {s.score.toFixed(4)}</li>
+            {/each}
+        </ul>
+    {/if}
 </div>

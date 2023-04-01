@@ -174,5 +174,4 @@ d3.select("#selectButton").on("change", function(d) {
         <button on:click={vectorize}>Get Vectors</button>
     </form>
     <!-- Create a div where the graph will take place -->
-    <figcaption>See the vectors emebeddings in a lower dimension place. Select the Word emebeddiung mechanism and dimensionality reduction technique.</figcaption>
 </div>

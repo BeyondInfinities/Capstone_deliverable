@@ -11,6 +11,7 @@
 		"@saehrimnir/druidjs": "^0.6.3",
 		"bibtex-parse-js": "0.0.24",
 		"boids": "^2.0.0",
+		"chart.js": "^4.2.1",
 		"chokidar": "^3.5.3",
 		"citation-js": "^0.6.7",
 		"d3-array": "^2.4.0",
@@ -26,6 +27,7 @@
 		"huggingface-api": "^1.0.3",
 		"raf": "^3.4.1",
 		"svelte": "^3.55.1",
+		"svelte-chartjs": "^3.1.2",
 		"topojson": "^3.0.2"
 	},
 	"devDependencies": {
@@ -44,6 +46,7 @@
 		"json-loader": "^0.5.7",
 		"lucid-components": "0.0.6",
 		"npm": "^6.13.6",
+		"numpy-loader": "^1.2.0",
 		"raw-loader": "^4.0.0",
 		"svelte-loader": "~2.13.6",
 		"svg-inline-loader": "^0.8.0",

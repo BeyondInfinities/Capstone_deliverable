@@ -3,6 +3,7 @@ import Image from "./diagrams/image.svelte"
 import Image1 from "./diagrams/image1.svelte"
 import Unmasker from "./diagrams/unmasker.svelte"
 import Vectors from "./diagrams/vectors.svelte"
+import Charts from "./diagrams/charts.svelte"
 // lazily initialize any diagram below the fold. E.G:
 // const exampleTag = document.getElementById("unmasker");
 // let example;
@@ -11,6 +12,9 @@ import Vectors from "./diagrams/vectors.svelte"
 // 	example = new Unmasker({ target });
 // });
 
+const charts = new Charts({
+	target: document.getElementById('charts')
+});
 
 const toc = new TOC({
 	target: document.getElementById('toc')

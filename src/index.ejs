@@ -53,6 +53,10 @@
 
       </orbit-reviewarea>
 
+      <div id="charts">
+        Please work
+      </div>
+
       <h2 id="abstract">Abstract</h2>
       <p>The paper reviews the current methods for measuring biases in NLP models, starting with a literature review of group biases and specific techniques for measuring them. We describe the limitations of a novel metric called the Categorical Bias score and propose improvements to it, including weighing attributes and interaction effects between different characteristic groups. We test implicit association test methods by exploiting the hidden and attention states. We build upon the current bias evaluation and mitigation standard and propose a framework for evaluating NLP models during the building and pre-deployment phases. We find that the interaction biases are insignificant for most interactions, especially anything above two interactions that seem to have a negligible bias. Except for the interaction between the country of origin and language. Further, attribute weighting reduces the categorical bias score for multiple categories.</p>
       <h2 id="introduction">Introduction</h2>
@@ -101,7 +105,7 @@
       <li><strong>Segment embeddings:</strong> To differentiate between two sentences or between question and answer, the BERT needs to understand which class or part of the input a word belongs to. For instance, if we are trying to solve a question-answering task, we can use this to differentiate between the question and the answer—usually represented by [SEP] token.</li>
       <li><strong>Position embeddings:</strong> This is used to differentiate between the token's position in the sentence. For instance, if we are trying to solve a question-answering task, we can use this to differentiate between the position of the question and the answer. We need position embeddings because we input all the tokens at once, and the model cannot know the token's position in the sentence. Hence, we need to explicitly tell the model the token's position in the sentence. Position embeddings inform the exact token number of a token in a given input. Position embeddings also help BERT learn the context. For instance, consider two sentences, &quot;A person was sitting on the bank of the river&quot; and &quot;A person robbed a bank.&quot; In the first sentence, the word &quot;bank&quot; refers to the river bank, and in the second sentence, the word &quot;bank&quot; refers to the financial institution or a bank. Hence, the model needs to learn the context of the word &quot;bank&quot; to solve the task.</li>
       </ol>
-      <div id="vectors"></div>
+      <div id="vectors"></div>  
       <!-- Initialize a select button -->
       <select id="selectButton"></select>
       <p>Currently, BERT can handle 512 tokens at once. For inputs larger than 512 tokens, the inputs can be broken down into smaller chunks, and the outputs of these chunks can be concatenated. However, in this case, the output would only contain part of the input context. The token limit is one of the most significant limitations of BERT. It also explains the word limit for google translate, which uses a similar transformer model.</p>

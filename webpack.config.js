@@ -10,7 +10,7 @@ module.exports = {
 		index: "./src/index.js",
 	},
 	resolve: {
-		extensions: [".mjs", ".js", ".html", ".npy"],
+		extensions: [".mjs", ".js", ".html", ".npy", ".npc", ".svg", ".css", ".bib"],
 	},
 	// Where and what name to output the files
 	output: {
@@ -22,8 +22,15 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.(html|js)$/,
+				test: /\.(npy|npc)$/,
 				exclude: /node_modules/,
+				loader: "numpy-loader",
+				options: {
+				  outputPath: "data/",
+				},
+			  },
+			{
+				test: /\.(html|js)$/,
 				loader: "babel-loader",
 				options: {
 					presets: ["@babel/preset-env"],
